@@ -6,12 +6,34 @@ export default function Header(){
             </div>
             <div>
                 <nav className="flex justify-between gap-[5px]">
-                    <div className="p-[12px] text-[17px] hover:bg-[#f7f5fa] font-semibold text-black"><a href="">Paytm for Consumer</a></div>
-                    <div className="p-[12px] text-[17px] hover:bg-[#f7f5fa] font-semibold text-black"><a href="">Paytm For Business</a></div>
-                    <div className="p-[12px] text-[17px] hover:bg-[#f7f5fa] font-semibold text-black"><a href="">Investor Relations</a></div>
-                    <div className="p-[12px] text-[17px] hover:bg-[#f7f5fa] font-semibold text-black"><a href="">Company</a></div>
-                    <div className="p-[12px] text-[17px] hover:bg-[#f7f5fa] font-semibold text-black"><a href="">Career</a></div>
-                </nav>
+    <div className="p-[12px] text-[17px] hover:bg-[#f7f5fa] font-semibold text-black relative">
+        <a href="">Paytm for Consumer</a>
+        <div className="dropdown-content hidden absolute bg-white shadow-lg">
+            <a href="">a</a>
+            <a href="">b</a>
+            <a href="">c</a>
+        </div>
+    </div>
+    <div className="p-[12px] text-[17px] hover:bg-[#f7f5fa] font-semibold text-black"><a href="">Paytm For Business</a></div>
+    <div className="p-[12px] text-[17px] hover:bg-[#f7f5fa] font-semibold text-black relative">
+        <a href="">Investor Relations</a>
+        <div className="dropdown-content hidden absolute bg-white shadow-lg">
+            <a href="">a</a>
+            <a href="">b</a>
+            <a href="">c</a>
+        </div>
+    </div>
+    <div className="p-[12px] text-[17px] hover:bg-[#f7f5fa] font-semibold text-black relative">
+        <a href="">Company</a>
+        <div className="dropdown-content hidden absolute bg-white shadow-lg">
+            <a href="">a</a>
+            <a href="">b</a>
+            <a href="">c</a>
+        </div>
+    </div>
+    <div className="p-[12px] text-[17px] hover:bg-[#f7f5fa] font-semibold text-black"><a href="">Career</a></div>
+</nav>
+
             </div>
             <div className=" flex items-center rounded-full bg-[#00baf2] hover:bg-[#002970] pl-5 p-0.5 gap-2">
                 <a href="" className="text-white">Sign in</a>
