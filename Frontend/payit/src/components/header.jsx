@@ -1,4 +1,7 @@
 import { useState } from "react";
+import {Link} from 'react-router-dom'
+
+
 export default function Header(){
 
 const[open,setOpen]=useState({
@@ -170,7 +173,7 @@ const[open,setOpen]=useState({
                 </nav>
             </div>
             <div className=" flex items-center rounded-full bg-[#00baf2] hover:bg-[#002970] pl-5 p-0.5 gap-2">
-                <a href="" className="text-white">Sign in</a>
+                <Link to={"/signup"} className="text-white"> Sign UP</Link>
                 <img src="https://pwebassets.paytm.com/commonwebassets/paytmweb/header/images/loginImg.svg" alt="" />
             </div>
         </div>

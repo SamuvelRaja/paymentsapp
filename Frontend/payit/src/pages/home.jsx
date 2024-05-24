@@ -1,4 +1,4 @@
-import BtnPrimary from "./btnprimary"
+import BtnPrimary from "../components/btnprimary"
 
 export default function Home(){
     return(
@@ -25,38 +25,38 @@ export default function Home(){
                     <div className="flex gap-8 justify-center w-fit">
                         <div className="w-[140px] serv-ops">
                             <img src="https://assetscdn1.paytm.com/images/catalog/view_item/733299/1626251017535.png" className="w-[64px]" alt="" />
-                            <p className="font-[17px] mt-[17px] text-white font-medium">Recharge </p>
-                            <p className="font-[15px] text-white font-semibold leading-[22px]">Prepaid <br />Mobile <span></span></p>
+                            <p className="text-[17px] mt-[17px] text-white font-medium">Recharge </p>
+                            <p className="text-[15px] text-white font-semibold leading-[22px]">Prepaid <br />Mobile <span></span></p>
                         </div>
                         <div className="w-[140px] serv-ops">
                             <img src="https://assetscdn1.paytm.com/images/catalog/view_item/733308/1626251043534.png" className="w-[64px]" alt="" />
-                            <p className="font-[17px] mt-[17px] text-white font-medium">Pay </p>
-                            <p className="font-[15px] text-white font-semibold leading-[22px]">Electricity <br />Bill <span></span></p>
+                            <p className="text-[17px] mt-[17px] text-white font-medium">Pay </p>
+                            <p className="text-[15px] text-white font-semibold leading-[22px]">Electricity <br />Bill <span></span></p>
                         </div>
                         <div className="w-[140px] serv-ops">
                             <img src="https://assetscdn1.paytm.com/images/catalog/view_item/733311/1626251101045.png" className="w-[64px]" alt="" />
-                            <p className="font-[17px] mt-[17px] text-white font-medium">Recharge </p>
-                            <p className="font-[15px] text-white font-semibold leading-[22px]">DTH <br />Connection <span></span></p>
+                            <p className="text-[17px] mt-[17px] text-white font-medium">Recharge </p>
+                            <p className="text-[15px] text-white font-semibold leading-[22px]">DTH <br />Connection <span></span></p>
                         </div>
                         <div className="w-[140px] serv-ops">
                             <img src="https://assetscdn1.paytm.com/images/catalog/view_item/733307/1626251127863.png" className="w-[64px]" alt="" />
-                            <p className="font-[17px] mt-[17px] text-white font-medium">Book </p>
-                            <p className="font-[15px] text-white font-semibold leading-[22px]">Gas <br />Cylinder <span></span></p>
+                            <p className="text-[17px] mt-[17px] text-white font-medium">Book </p>
+                            <p className="text-[15px] text-white font-semibold leading-[22px]">Gas <br />Cylinder <span></span></p>
                         </div>
                         <div className="w-[140px] serv-ops">
                             <img src="https://assetscdn1.paytm.com/images/catalog/view_item/1269194/1672827522093.png" className="w-[64px]" alt="" />
-                            <p className="font-[17px] mt-[17px] text-white font-medium">Pay </p>
-                            <p className="font-[15px] text-white font-semibold leading-[22px]">Broadband & <br />Landline Bill <span></span></p>
+                            <p className="text-[17px] mt-[17px] text-white font-medium">Pay </p>
+                            <p className="text-[15px] text-white font-semibold leading-[22px]">Broadband & <br />Landline Bill <span></span></p>
                         </div>
                         <div className="w-[140px] serv-ops">
                             <img src="https://assetscdn1.paytm.com/images/catalog/view_item/1269198/1672828917034.png" className="w-[64px]" alt="" />
-                            <p className="font-[17px] mt-[17px] text-white font-medium">Pay </p>
-                            <p className="font-[15px] text-white font-semibold leading-[22px]">Education <br />Fee <span></span></p>
+                            <p className="text-[17px] mt-[17px] text-white font-medium">Pay </p>
+                            <p className="text-[15px] text-white font-semibold leading-[22px]">Education <br />Fee <span></span></p>
                         </div>
                         <div className="w-[140px] serv-ops">
                             <img src="https://assetscdn1.paytm.com/images/catalog/view_item/757701/1626268580682.png" className="w-[64px]" alt="" />
-                            <p className="font-[17px] mt-[17px] text-white font-medium">All </p>
-                            <p className="font-[15px] text-white font-semibold leading-[22px]">Payment <br />Services <span></span></p>
+                            <p className="text-[17px] mt-[17px] text-white font-medium">All </p>
+                            <p className="text-[15px] text-white font-semibold leading-[22px]">Payment <br />Services <span></span></p>
                         </div>
                     </div>
                     
@@ -68,31 +68,31 @@ export default function Home(){
                     <div className="flex gap-8 justify-center w-fit">
                         <div className="w-[140px] serv-ops">
                             <img src="https://assetscdn1.paytm.com/images/catalog/view_item/733295/1626259710574.png" className="w-[64px]" alt="" />
-                            <p className="font-[18px] mt-[17px] text-white font-bold leading-[20px]">Movie <br />Tickets<span></span></p>
+                            <p className="text-[18px] mt-[17px] text-white font-bold leading-[20px]">Movie <br />Tickets<span></span></p>
                         </div>
                         <div className="w-[140px] serv-ops">
                             <img src="https://assetscdn1.paytm.com/images/catalog/view_item/733296/1626259884425.png" className="w-[64px]" alt="" />
-                            <p className="font-[18px] mt-[17px] text-white font-bold leading-[20px]">Flight <br />Tickets <span></span></p>
+                            <p className="text-[18px] mt-[17px] text-white font-bold leading-[20px]">Flight <br />Tickets <span></span></p>
                         </div>
                         <div className="w-[140px] serv-ops">
                             <img src="https://assetscdn1.paytm.com/images/catalog/view_item/729996/1626260477699.png" className="w-[64px]" alt="" />
-                            <p className="font-[18px] mt-[17px] text-white font-bold leading-[20px]">Bus <br />Tickets <span></span></p>
+                            <p className="text-[18px] mt-[17px] text-white font-bold leading-[20px]">Bus <br />Tickets <span></span></p>
                         </div>
                         <div className="w-[140px] serv-ops">
                             <img src="https://assetscdn1.paytm.com/images/catalog/view_item/729997/1696910636390.png" className="w-[64px]" alt="" />
-                            <p className="font-[18px] mt-[17px] text-white font-bold leading-[20px]">Train <br />Tickets <span></span></p>
+                            <p className="text-[18px] mt-[17px] text-white font-bold leading-[20px]">Train <br />Tickets <span></span></p>
                         </div>
                         <div className="w-[140px] serv-ops">
                             <img src="https://assetscdn1.paytm.com/images/catalog/view_item/729999/1626259968563.png" className="w-[64px]" alt="" />
-                            <p className="font-[18px] mt-[17px] text-white font-bold leading-[20px]">International <br />Flights <span></span></p>
+                            <p className="text-[18px] mt-[17px] text-white font-bold leading-[20px]">International <br />Flights <span></span></p>
                         </div>
                         <div className="w-[140px] serv-ops">
                             <img src="https://assetscdn1.paytm.com/images/catalog/view_item/729998/1666185237748.png" className="w-[64px]" alt="" />
-                            <p className="font-[18px] mt-[17px] text-white font-bold leading-[20px]">Buy <br />Insurance <span></span></p>
+                            <p className="text-[18px] mt-[17px] text-white font-bold leading-[20px]">Buy <br />Insurance <span></span></p>
                         </div>
                         <div className="w-[140px] serv-ops">
                             <img src="https://assetscdn1.paytm.com/images/catalog/view_item/730001/1626450848003.png" className="w-[64px]" alt="" />
-                            <p className="font-[18px] mt-[17px] text-white font-bold leading-[20px]">Invest <br />In Stocks <span></span></p>
+                            <p className="text-[18px] mt-[17px] text-white font-bold leading-[20px]">Invest <br />In Stocks <span></span></p>
                         </div>
                     </div>
                 </div>
