@@ -22,7 +22,7 @@ export default function Home(){
                 <div className="flex flex-col  py-[65px] w-fit mx-auto">
                     <h2 className="text-[#fff] font-bold pb-[25px]">Recharge & Pay Bills on Paytm.</h2>
                     
-                    <div className="flex gap-4 justify-center w-fit">
+                    <div className="flex gap-8 justify-center w-fit">
                         <div className="w-[140px] serv-ops">
                             <img src="https://assetscdn1.paytm.com/images/catalog/view_item/733299/1626251017535.png" className="w-[64px]" alt="" />
                             <p className="font-[17px] mt-[17px] text-white font-medium">Recharge </p>
@@ -65,7 +65,7 @@ export default function Home(){
             <div className="services serv-bot bg-[#0F4A8A] ">
                 <div className="flex flex-col  py-[65px] w-fit mx-auto">
                     <h2 className="text-[#fff] font-bold pb-[25px]">Book & Buy on Paytm.</h2>
-                    <div className="flex gap-4 justify-center w-fit">
+                    <div className="flex gap-8 justify-center w-fit">
                         <div className="w-[140px] serv-ops">
                             <img src="https://assetscdn1.paytm.com/images/catalog/view_item/733295/1626259710574.png" className="w-[64px]" alt="" />
                             <p className="font-[18px] mt-[17px] text-white font-bold leading-[20px]">Movie <br />Tickets<span></span></p>
