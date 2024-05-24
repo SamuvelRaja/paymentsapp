@@ -41,4 +41,40 @@ header{
 .dropdown-content a:hover {
     background-color: #ddd;
 }
-
+.ddparent>div .dds{
+  left: 90%;
+  top: -1px;
+  border-radius: 0px 8px 8px  0px !important;
+}
+.dds{
+  transition: all 0.5s  ease-out;
+  min-height: fit-content;
+}
+.dds:hover{
+  min-height: 158px;
+}
+.ddparent>div{
+  top: 45px;
+  }
+  .services h2{
+    font-size: 36px;
+  }
+  .services span{
+    margin-left: 6px;
+    padding: 3px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    transition: all .3s ease;
+    transform: rotate(-45deg);
+  }
+  .services .serv-ops{
+    border-radius: 12px;
+    padding: 16px 11px 16px 16px;
+  }
+  .serv-top .serv-ops:hover{
+    background-color: #00afe3;
+  }
+  .serv-bot .serv-ops:hover{
+    background-color: #0d3e80;
+  }
