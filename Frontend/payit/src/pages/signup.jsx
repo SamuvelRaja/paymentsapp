@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Z from "zod";
+import { ToastContainer, toast } from 'react-toastify';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -10,24 +12,51 @@ const Signup = () => {
     showConfirmPassword: false
   });
 
+const passwordSchema = Z.string()
+  .min(8, "Password must be at least 8 characters long")
+  .max(20, "Password must be less than 20 characters long")
+  .regex(
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/,
+    "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character"
+  );
+
+
+  const userSchema = Z.object({
+    email:Z.string().email(),
+    password:passwordSchema,
+  })
+
   const handleSignup = (e) => {
     e.preventDefault();
+    console.log("formData");
+    const postData = {
+      email: formData.email,
+      password: formData.password
+    };
     
+    try {
+          const parsedData = userSchema.safeParse(postData);
+          console.log(parsedData.data,"hh"); 
+          fetch("http://localhost:3000/user/signup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formData)
+        })
+          .then(response => response.json())
+          .then(data => {
+            // Handle the response data
+          })
+          .catch(error => {
+            // Handle the error
+          });// Validated and parsed data
+        } catch (error) {
+          toast.error("Validation Errors!")
+          console.error("Validation Errors:", error.format()); // Display error messages
+        }
     // Add your signup logic here
-    fetch("http://localhost:3000/user/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(formData)
-    })
-      .then(response => response.json())
-      .then(data => {
-        // Handle the response data
-      })
-      .catch(error => {
-        // Handle the error
-      });
+    
   };
 
   const handleChange = (e) => {
@@ -53,6 +82,7 @@ const Signup = () => {
 
   return (
     <div className="flex justify-center items-center h-screen mt-[-92px] bg-gray-100 ">
+      <ToastContainer />
       <div className="bg-white rounded-lg shadow-lg p-8 w-[360px]">
         <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
         <form onSubmit={handleSignup}>
