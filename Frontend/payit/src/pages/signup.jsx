@@ -87,6 +87,16 @@ const emailSchema=Z.string().email()
         confirmErr.current.innerText=""
       }
     }
+    // enable button
+    if (
+    emailErr.current.innerText === "" &&
+    passErr.current.innerText === "" &&
+    confirmErr.current.innerText === ""
+      ) {
+        btnref.current.disabled = false;
+      } else {
+        btnref.current.disabled = true;
+      }
     setFormData({
       ...formData,
       [e.target.id]: e.target.value
@@ -190,6 +200,7 @@ const emailSchema=Z.string().email()
             type="submit"
             className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 disabled:opacity-50"
             ref={btnref}
+            disabled
           >
             Sign Up
           </button>
