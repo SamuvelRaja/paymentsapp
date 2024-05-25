@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Z from "zod";
 import { ToastContainer, toast } from 'react-toastify';
@@ -12,31 +12,18 @@ const Signup = () => {
     showConfirmPassword: false
   });
 
-const passwordSchema = Z.string()
-  .min(8, "Password must be at least 8 characters long")
-  .max(20, "Password must be less than 20 characters long")
-  .regex(
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/,
-    "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character"
-  );
 
-
-  const userSchema = Z.object({
-    email:Z.string().email(),
-    password:passwordSchema,
-  })
 
   const handleSignup = (e) => {
     e.preventDefault();
-    console.log("formData");
     const postData = {
       email: formData.email,
       password: formData.password
     };
     
+    console.log(postData,"formData");
     try {
-          const parsedData = userSchema.safeParse(postData);
-          console.log(parsedData.data,"hh"); 
+          
           fetch("http://localhost:3000/user/signup", {
           method: "POST",
           headers: {
@@ -58,8 +45,48 @@ const passwordSchema = Z.string()
     // Add your signup logic here
     
   };
+  const emailErr=useRef();
+  const passErr=useRef();
+  const confirmErr=useRef()
+  const btnref=useRef()
 
+const passwordSchema = Z.string()
+  .min(8, "Password must be at least 8 characters long")
+  .max(20, "Password must be less than 20 characters long")
+  .regex(
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/,
+    "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character"
+  );
+const emailSchema=Z.string().email()
+
+ 
   const handleChange = (e) => {
+    // validate email
+    if(e.target.id==="email"){
+      const emailParse=emailSchema.safeParse(e.target.value);
+      if(!emailParse.success){
+        emailErr.current.innerText="Enter a valid email"
+      }else{
+        emailErr.current.innerText=""
+      }
+    }
+    // validate password
+    if(e.target.id==="password"){
+      const passParse=passwordSchema.safeParse(e.target.value);
+      if(!passParse.success){
+        passErr.current.innerText="Enter min 8 chracter should include a lowercase, uppercase, number and special character"
+      }else{
+        passErr.current.innerText=""
+      }
+    }
+    //validate confirm password
+    if(e.target.id==="confirmPassword"){
+      if(e.target.value!==formData.password){
+        confirmErr.current.innerText="Password does not match"
+      }else{
+        confirmErr.current.innerText=""
+      }
+    }
     setFormData({
       ...formData,
       [e.target.id]: e.target.value
@@ -103,6 +130,7 @@ const passwordSchema = Z.string()
               required
             />
           </div>
+          <p ref={emailErr} className="text-[red] mt-2 text-[12px]"></p>
           <div className="mb-4">
             <label
               htmlFor="password"
@@ -127,7 +155,9 @@ const passwordSchema = Z.string()
               >
                 {formData.showPassword ? "Hide" : "Show"}
               </button>
+              
             </div>
+            <p ref={passErr} className="text-[red] mt-2 text-[12px]"></p>
           </div>
           <div className="mb-4">
             <label
@@ -154,10 +184,12 @@ const passwordSchema = Z.string()
                 {formData.showConfirmPassword ? "Hide" : "Show"}
               </button>
             </div>
+            <p ref={confirmErr} className="text-[red] mt-2 text-[12px]"></p>
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+            className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 disabled:opacity-50"
+            ref={btnref}
           >
             Sign Up
           </button>
