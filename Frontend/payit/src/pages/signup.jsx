@@ -21,30 +21,22 @@ const Signup = () => {
       password: formData.password
     };
     
-    console.log(postData,"formData");
-    try {
-          
-          fetch("http://localhost:3000/user/signup", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(formData)
-        })
-          .then(response => response.json())
-          .then(data => {
-            // Handle the response data
-          })
-          .catch(error => {
-            // Handle the error
-          });// Validated and parsed data
-        } catch (error) {
-          toast.error("Validation Errors!")
-          console.error("Validation Errors:", error.format()); // Display error messages
-        }
-    // Add your signup logic here
+      fetch("http://localhost:3000/auth/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(postData)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });// Validated and parsed data
+    } 
     
-  };
   const emailErr=useRef();
   const passErr=useRef();
   const confirmErr=useRef()
