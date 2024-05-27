@@ -48,9 +48,30 @@ route.post("/signup",async function(req,res){
     
 })
 
+    const loginSchema=z.object({
+        email:z.string().email(),
+        password:z.string()
+    })
 
-route.post("/login",function(req,res){
-
+route.post("/login",async function(req,res){
+  console.log(req.body)
+  const loginParse=loginSchema.safeParse(req.body)
+  if(!loginParse.success){
+      return res.status(400).send({msg:"Invalid inputs"})
+  }
+  const logUser=await User.findOne({email:req.body.email})
+  console.log(logUser)
+  if(logUser===null){
+      return res.status(400).send({msg:"User not found"})
+  }else if(logUser.password===req.body.password){
+      const token=jwt.sign({
+        userId:logUser._id
+      },jwtSecret)    
+      return res.json({
+          msg:"Login successful",
+          token:token
+      })
+  }
 })
 
 module.exports=route

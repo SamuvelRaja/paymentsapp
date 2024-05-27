@@ -31,6 +31,7 @@ const Signup = () => {
       .then(response => response.json())
       .then(data => {
         console.log(data);
+        localStorage.setItem("token",data.token)
       })
       .catch(error => {
         console.error("Error:", error);

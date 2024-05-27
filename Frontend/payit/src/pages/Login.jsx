@@ -11,8 +11,28 @@ const Login = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        // Add your login logic here
+        const postData = {
+            email:formData.email,
+            password:formData.password
     };
+    fetch("http://localhost:3000/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(postData)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        localStorage.setItem("token",data.token)
+        
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });// Validated and parsed data
+    }
+
     
     const handleChange = (e) => {
     setFormData({
