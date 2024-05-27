@@ -1,6 +1,7 @@
 const express=require('express')
 const z=require("zod")
-
+const User=require('../DB/db')
+const jwt=require('jsonwebtoken')
 const route=express.Router();
 
 
@@ -16,17 +17,23 @@ const signSchema=z.object({
     password:passwordSchema
 })
 
-route.post("/signup",function(req,res){
+route.post("/signup",async function(req,res){
     const data=req.body
     const valData=signSchema.safeParse(data)
     console.log(valData)
-    if(valData.success){
-        res.send({})
-    }else{
-        res.status(400).send({msg:"Invalid inputs"})
+    if(!valData.success){
+        return res.status(400).send({msg:"Invalid inputs"})
     }
-    
-    return
+    const existUser=User.findOne({email:data.email})
+    console.log(existUser,"user")
+    if(existUser.id){
+        return res.status(400).send({msg:"User already exists"})
+    }
+    const create=await User.create(data)
+
+    return res.json({
+      msg:"user created sucessfully"
+    })
 })
 
 
