@@ -24,11 +24,14 @@ route.post("/signup",async function(req,res){
     if(!valData.success){
         return res.status(400).send({msg:"Invalid inputs"})
     }
-    const existUser=User.findOne({email:data.email})
-    console.log(existUser,"user")
-    if(existUser.id){
+    const existUser=await User.findOne({email:data.email})
+      console.log(existUser,"sss")
+    if(existUser!==null){
+      console.log(existUser,"user",existUser.id)
         return res.status(400).send({msg:"User already exists"})
     }
+
+    
     const create=await User.create(data)
 
     return res.json({
