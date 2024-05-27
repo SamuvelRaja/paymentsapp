@@ -16,27 +16,36 @@ const signSchema=z.object({
     email:z.string().email(),
     password:passwordSchema
 })
+const jwtSecret=process.env.JWT_SECRET
 
 route.post("/signup",async function(req,res){
     const data=req.body
     const valData=signSchema.safeParse(data)
-    console.log(valData)
+    
     if(!valData.success){
         return res.status(400).send({msg:"Invalid inputs"})
     }
     const existUser=await User.findOne({email:data.email})
-      console.log(existUser,"sss")
     if(existUser!==null){
-      console.log(existUser,"user",existUser.id)
         return res.status(400).send({msg:"User already exists"})
     }
 
     
     const create=await User.create(data)
+    console.log(create,"kk", create._id,"ll", create.id)
+    if(create){
+      const token =jwt.sign({
+        userId:create._id
+      },jwtSecret)
+     return res.json({
+          msg:"user created sucessfully",
+          token:token
+        })
+ }
+   
+   
 
-    return res.json({
-      msg:"user created sucessfully"
-    })
+    
 })
 
 
