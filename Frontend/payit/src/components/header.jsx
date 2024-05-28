@@ -138,7 +138,9 @@ const[open,setOpen]=useState({
     return(<header className="sticky ">
         <div className="flex  justify-between items-center mx-auto skull h-[92px] ">
             <div>
-                <img src="https://pwebassets.paytm.com/commonwebassets/paytmweb/header/images/logo.svg" alt="paytmlogo" />
+                <Link to="/">
+                    <img src="https://pwebassets.paytm.com/commonwebassets/paytmweb/header/images/logo.svg" alt="paytmlogo" />
+                </Link>
             </div>
             <div>
                 <nav className="flex justify-between gap-[5px] relative">

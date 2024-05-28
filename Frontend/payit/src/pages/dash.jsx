@@ -15,7 +15,7 @@ const Dash = () => {
             <div className="flex justify-between items-center bg-blue-500 p-4">
                 <div className="flex items-center">
                     <img
-                        src="/path/to/paytm-logo.png"
+                        src="https://assetscdn1.paytm.com/images/catalog/view/310944/1697527183231.png"
                         alt="Paytm Logo"
                         className="h-8 w-8 mr-2"
                     />
