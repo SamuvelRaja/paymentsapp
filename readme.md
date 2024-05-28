@@ -51,20 +51,20 @@ Start the development server:
 ```bash
 npm run dev
 ```
-###Features
--Landing Page: The main entry point of the application.
--Login: Allows users to log in using their credentials.
--Signup: Allows new users to create an account.
--Dashboard: A protected route that only authenticated users can access.
+### Features
+- Landing Page: The main entry point of the application.
+- Login: Allows users to log in using their credentials.
+- Signup: Allows new users to create an account.
+- Dashboard: A protected route that only authenticated users can access.
 
-###Libraries Used
--Zod: For validation on both frontend and backend.
--React Router: For implementing protected routes.
+### Libraries Used
+- Zod: For validation on both frontend and backend.
+- React Router: For implementing protected routes.
 
-###Understanding JWT Authentication
+### Understanding JWT Authentication
 This project demonstrates how to implement JWT authentication in a MERN stack application. JWT tokens are used to protect routes and ensure that only authenticated users can access certain parts of the application.
 
-###Conclusion
+### Conclusion
 This project provides a comprehensive example of how to implement JWT authentication in a MERN stack application. By following the instructions above, you can run the application on your local machine and explore the various features implemented.
 
 Feel free to explore the code and modify it to suit your needs. Happy coding! 😊
